@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "88f92b04-09dd-4332-93ba-d64fb0feaaa8",
+		"name": "SafeBank",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/hello",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "siraj",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/hello",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
