@@ -2,6 +2,7 @@ package com.company.safebank.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.password.CompromisedPasswordChecker;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,6 +11,7 @@ import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.authentication.password.HaveIBeenPwnedRestApiPasswordChecker;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
@@ -29,7 +31,7 @@ public class BasicSecurityConfig {
     @Bean
     public UserDetailsService userDetailsService() {
         // The "{noop}" prefix indicates that the password is stored in plain text (not recommended for production).
-        UserDetails user = User.withUsername("user").password("{noop}12345").authorities("read").build();
+        UserDetails user = User.withUsername("user").password("{noop}SirajChaudhary@12345").authorities("read").build();
 
         // Instead of plain text, you can store securely hashed passwords.
         // Use BCrypt (Spring Security’s default) to generate a password hash, e.g., via https://bcrypt-generator.com/.
@@ -47,5 +49,12 @@ public class BasicSecurityConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
+
+    // This method prevents users from setting simple or compromised passwords like "12345".
+    // So now we need to keep strong password like "SirajChaudhary@12345".
+    @Bean
+    public CompromisedPasswordChecker compromisedPasswordChecker() {
+        return new HaveIBeenPwnedRestApiPasswordChecker();
     }
 }
