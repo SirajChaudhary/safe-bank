@@ -13,12 +13,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "12345",
+							"value": "SameerChaudhary@12345",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "siraj",
+							"value": "sameer@yahoo.com",
 							"type": "string"
 						}
 					]
@@ -26,14 +26,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/hello",
+					"raw": "http://localhost:8080/myAccount",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"hello"
+						"myAccount"
 					]
 				}
 			},
@@ -47,12 +47,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "12345",
+							"value": "SameerChaudhary@12345",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "siraj",
+							"value": "sameer@yahoo.com",
 							"type": "string"
 						}
 					]
@@ -81,12 +81,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "12345",
+							"value": "SameerChaudhary@12345",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "siraj",
+							"value": "sameer@yahoo.com",
 							"type": "string"
 						}
 					]
@@ -115,12 +115,12 @@
 					"basic": [
 						{
 							"key": "password",
-							"value": "12345",
+							"value": "SameerChaudhary@12345",
 							"type": "string"
 						},
 						{
 							"key": "username",
-							"value": "siraj",
+							"value": "sameer@yahoo.com",
 							"type": "string"
 						}
 					]
@@ -177,6 +177,37 @@
 					"port": "8080",
 					"path": [
 						"contact"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"sameer@yahoo.com\",\n    \"pwd\": \"SameerChaudhary@12345\",\n    \"role\": \"user\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
 					]
 				}
 			},
